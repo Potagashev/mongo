@@ -1,7 +1,9 @@
 import os
 
-import motor.motor_asyncio
+from motor.motor_asyncio import AsyncIOMotorClient
+
+db = AsyncIOMotorClient(os.environ.get("MONGODB_URL"))
 
 
-client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
-db = client.barbershop
+async def get_database() -> AsyncIOMotorClient:
+    return db
