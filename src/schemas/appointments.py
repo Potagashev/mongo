@@ -2,22 +2,22 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from src.schemas.common import PyObjectId
+from src.schemas.common import PyObjectId, Declarative
 
 
 class AppointmentBase(BaseModel):
     master_name: str
     client_name: str
-
-
-class AppointmentFull(AppointmentBase):
-    id: PyObjectId
     date_time: datetime
+
+
+class AppointmentFull(AppointmentBase, Declarative):
+    pass
 
 
 class AppointmentCreate(AppointmentBase):
     pass
 
 
-class AppointmentUpdate(AppointmentBase):
+class AppointmentUpdate(AppointmentCreate):
     pass
