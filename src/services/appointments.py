@@ -5,7 +5,7 @@ from src.schemas import appointments as schemas
 
 
 class AppointmentService:
-    def __init__(self, repo: AppointmentRepo = Depends(AppointmentRepo)):
+    def __init__(self, repo: AppointmentRepo = Depends()):
         self.repo = repo
 
     async def get_many(self) -> list[schemas.AppointmentFull]:

@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from src.schemas.common import PyObjectId, Declarative
+from src.schemas.common import Declarative
 
 
 class AppointmentBase(BaseModel):
